@@ -17,14 +17,14 @@ resource "aws_internet_gateway" "tfb" {
 
 resource "aws_route" "internet_access" {
 	route_table_id = aws_vpc.tfb.main_route_table_id
-	destination_cide_block = "0.0.0.0/0"
+	destination_cidr_block = "0.0.0.0/0"
 	gateway_id = aws_internet_gateway.tfb.id
 }
 
 resource "aws_subnet" "public" {
 	vpc_id = aws_vpc.tfb.id
 	cidr_block  = var.public_subnet
-	map_public_ip_on_lauch = var.map_public_ip_on_launch
+	map_public_ip_on_launch = var.map_public_ip_on_launch
 	tags = {
 		Name = "${var.name}-public"
 	}
