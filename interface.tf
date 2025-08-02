@@ -32,7 +32,7 @@ output "public_subnet_id" {
 }
 
 output "vpc_id" {
-	value = aws_pvc.tfb.id
+	value = aws_vpc.tfb.id
 }
 
 output "cidr" {
